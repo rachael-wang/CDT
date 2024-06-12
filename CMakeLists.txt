@@ -69,7 +69,7 @@ endif()
 
 # Public include directory
 target_include_directories(${PROJECT_NAME} PUBLIC
-	src
+	src/cdt
 	include
 )
 

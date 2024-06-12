@@ -203,14 +203,14 @@ class MultiPool {
 	uint32_t max_block_size;
 
 	IN_pool& pickPoolFromSize(uint32_t bs) {
-		auto cz = std::countl_zero(bs - 1);
-		cz = (cz == 32) ? (31) : (cz);
-		return IN_pools[31 - cz];
+		// auto cz = std::countl_zero(bs - 1);
+		// cz = (cz == 32) ? (31) : (cz);
+		// return IN_pools[31 - cz];
 
-		//// FOR COMPILERS THAT DO NOT SUPPORT C++20 REPLACE THE ABOVE WITH THE FOLLOWING
-		//std::vector<IN_pool>::iterator i = IN_pools.begin();
-		//while ((*i).blockSize() < bs) i++;
-		//return *i;
+		// FOR COMPILERS THAT DO NOT SUPPORT C++20 REPLACE THE ABOVE WITH THE FOLLOWING
+		std::vector<IN_pool>::iterator i = IN_pools.begin();
+		while ((*i).blockSize() < bs) i++;
+		return *i;
 	}
 
 public:
