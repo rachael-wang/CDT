@@ -3,6 +3,7 @@
 #include <iomanip>
 
 using namespace std;
+using namespace cdt;
 
 void TetMesh::init_vertices(const double* coords, uint32_t num_v) {
     vertices.reserve(num_v);

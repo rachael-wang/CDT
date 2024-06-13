@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <set>
 
+using namespace cdt;
 
 // ------------------------- //
 // Fill cavity gift-wrapping //

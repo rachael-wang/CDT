@@ -5,6 +5,8 @@
 #include <algorithm>
 #include <set>
 
+using namespace cdt;
+
 #ifdef USE_INDIRECT_PREDS
 double PLCx::getT1(uint32_t oe0i, uint32_t e0i) const {
     const std::vector<pointType*>& vs = delmesh.vertices;
@@ -1329,12 +1331,12 @@ size_t PLCx::markInnerTets() {
     // Crea relazione VF
     //   per ogni faccia f aggiungi f alla VF di tutti i suoi bounding e internal vertices
     // Per ogni triangolo in delmesh, cerca la(le) faccia comune f in VF(v1), VF(v2) e VF(v3)
-    //   se c'è più di una faccia comune marca immediatamente il triangolo e passa oltre
+    //   se c'ï¿½ piï¿½ di una faccia comune marca immediatamente il triangolo e passa oltre
     //   altrimenti
     // scopri se il triangolo sta dentro o fuori dalla faccia comune f (orient2d?)
-    //   1) se f è convessa
-    //   2) se v1 è interno a f (o v2, o v3)
-    //   3) se il baricentro del triangolo è interno a uno dei triangoli di f e al triangolo stesso (check per possibile errore numerico)
+    //   1) se f ï¿½ convessa
+    //   2) se v1 ï¿½ interno a f (o v2, o v3)
+    //   3) se il baricentro del triangolo ï¿½ interno a uno dei triangoli di f e al triangolo stesso (check per possibile errore numerico)
     // Se la faccia comune esiste e il triangolo ci sta dentro allora marcala, altrimenti no
 
 

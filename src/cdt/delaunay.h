@@ -28,6 +28,8 @@
 // This will make the code slightly slower (from 1% to 3% depending on the cases).
 // #define USE_MAROTS_METHOD
 
+namespace cdt{
+
 // Tetrahedral mesh data structure
 
 class TetMesh {
@@ -445,6 +447,8 @@ inline std::ostream& operator<<(std::ostream& os, const vector3d& p)
 {
     return os << (p.c[0]) << " " << (p.c[1]) << " " << (p.c[2]);
 }
+
+} // namespace cdt
 
 #endif // _DELAUNAY_
 

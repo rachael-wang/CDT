@@ -82,6 +82,8 @@ extern void ip_error(const char* msg);
 #define DT_IN  2
 #define EXPECTED_VT_SIZE 128
 
+namespace cdt {
+
 class pointType {
 public:
     coord_t coords[3];
@@ -422,6 +424,8 @@ inline std::ostream& operator<<(std::ostream& os, const pointType& p)
 {
     return os << GET_DOUBLE_VAL(p[0]) << " " << GET_DOUBLE_VAL(p[1]) << " " << GET_DOUBLE_VAL(p[2]);
 }
+
+} // namespace cdt
 
 #endif // USE_INDIRECT_PREDS
 

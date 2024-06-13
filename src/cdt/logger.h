@@ -3,6 +3,8 @@
 FILE* log_fp;
 std::chrono::steady_clock::time_point time_point;
 
+namespace cdt {
+
 inline void startLogging(const char* fn) {
     if (fn != NULL) {
         log_fp = fopen("cdt_log.csv", "r");
@@ -89,4 +91,6 @@ inline void logMemInfo() {
     getrusage(RUSAGE_SELF, &r_usage);
     fprintf(log_fp, ", %.2f", r_usage.ru_maxrss / 1000.0);
 }
+
+} // namespace cdt
 #endif
